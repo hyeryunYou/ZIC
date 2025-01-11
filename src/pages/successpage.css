@@ -1,32 +1,55 @@
+/* Google Fonts에서 Anek Devanagari 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@400;700&display=swap');
+
+
 /*전체 컨테이너*/
 .success-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* 왼쪽, 중앙, 오른쪽 비율 */
     height: 100vh;
     box-sizing: border-box;
 }
 
-/*메인 콘텐츠*/
-.success-content {
-    text-align: center;
+/*왼, 오른쪽 영역*/
+.success-left,
+.success-right {
+    background-color: none;
+}
+
+/*센터 영역*/
+.success-center {
+    background-color: none; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.success-content p {
-    font-size: 18px;
-    margin: 0;
+/*메인 콘텐츠*/
+.success-center p {
+    font-family: 'Anek Devanagari', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 2%;
+    width: 94px;
+    height: 26px;
+    margin-top: 207px;
+    margin-left: 36px;
+    color: #030303;
 }
 
-.success-content h1 {
-    font-size: 32px;
-    margin: 10px 0;
-    color: #000;
-    font-weight: bold;
+.success-center h1 {
+    font-family: 'Anek Devanagari', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 46.8px;
+    width: 179px;
+    height: 47px;
+    top: 245px;
+    left: 34px;
+    color: #030303;
 }
 
 /*버튼*/
