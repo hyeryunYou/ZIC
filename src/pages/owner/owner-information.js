@@ -4,7 +4,7 @@ import NextButton from "../../components/button"; // 공용 button 컴포넌트 
 import "./owner-information.css";
 
 export default function OwnerInformation() {
-    const [selectedInstruments, setSelectedInstruments] = useState<string[]>([]);
+    const [selectedInstruments, setSelectedInstruments] = useState([]);
 
     const instruments = [
         "피아노", "바이올린",
@@ -14,7 +14,7 @@ export default function OwnerInformation() {
         "비올라", "사물놀이",
     ];
 
-    const toggleInstrument = (instrument: string) => {
+    const toggleInstrument = (instrument) => {
         if (selectedInstruments.includes(instrument)) {
             // 이미 선택된 악기를 클릭하면 선택 해제
             setSelectedInstruments(selectedInstruments.filter(item => item !== instrument));
