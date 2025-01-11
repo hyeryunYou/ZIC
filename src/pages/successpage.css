@@ -1,0 +1,45 @@
+/*전체 컨테이너*/
+.success-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/*메인 콘텐츠*/
+.success-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-content p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.success-content h1 {
+    font-size: 32px;
+    margin: 10px 0;
+    color: #000;
+    font-weight: bold;
+}
+
+/*버튼*/
+.skip-btn {
+    background: none;
+    color: #007bff;
+    border: none;
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.skip-btn:hover {
+    color: #0056b3;
+}

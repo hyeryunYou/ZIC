@@ -27,21 +27,21 @@ export default function OwnerInformation() {
     return (
         <div className="owner-information-container">
             <Header />
-            <div className="content">
+            <div className="owner-content">
                 {/*상호명 입력*/}
-                <div className="form-section">
+                <div className="owner-form-section">
                     <label htmlFor="store-name" className="label">상호명</label>
                     <input type="text" id="store-name" className="input" placeholder="상호명을 입력해주세요." />
                 </div>
 
                 {/*사업자 번호 입력*/}
-                <div className="form-section">
+                <div className="owner-form-section">
                     <label htmlFor="business-number" className="label">사업자 번호</label>
                     <input type="text" id="business-number" className="input" placeholder="사업자 번호를 입력해주세요." />
                 </div>
 
                 {/*주소 입력*/}
-                <div className="form-section">
+                <div className="owner-form-section">
                     <label htmlFor="address" className="label">주소</label>
                     <div className="search-bar">
                         <input

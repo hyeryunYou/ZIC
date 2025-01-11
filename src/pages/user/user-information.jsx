@@ -27,9 +27,9 @@ export default function UserInformation() {
     return (
         <div className="user-information-container">
             <Header />
-            <div className="content">
+            <div className="user-content">
                 {/*지역 입력*/}
-                <div className="region-section">
+                <div className="user-region-section">
                     <label className="label">지역</label>
                     <div className="search-bar">
                         <input
