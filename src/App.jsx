@@ -5,6 +5,7 @@ import UserInformation from "./pages/user/user-information";
 import UserSuccess from "./pages/user/user-success"
 import OwnerInformation from "./pages/owner/owner-information";
 import OwnerSuccess from "./pages/owner/owner-success";
+import './App.css';
 
 function App() {
     return (
