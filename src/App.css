@@ -8,10 +8,15 @@
 .root-layout {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
 }
 
-.content-wrap{
-    width : 393px;
-    height : 852px;
+.content-wrap {
+    width: 393px;
+    height: 852px; /* 최소 높이만 설정 */
+}
+
+/* 특정 페이지에만 적용되는 크기 */
+.content-wrap.owner-information {
+    height: 974px;
 }
