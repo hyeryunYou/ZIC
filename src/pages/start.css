@@ -2,47 +2,48 @@
 .start-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: white;
+    justify-content: center;
+    height: 100%;
+    background-color: none;
 }
 
-/*헤더*/
-.start-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
+/*텍스트&로고*/
+.text-and-logo {
+    position: relative;
 }
 
 .text-and-logo p {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-    padding-bottom: 10px;
-}
-
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    align-items: flex-start;
+    position: absolute; /* 이미지와 겹치도록 설정 */
+    width: 197px;
+    height: 34px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 34.11px;
+    margin-top: 197.5px;
+    margin-left: 27px;
+    z-index: 2; /* 텍스트를 이미지 위에 표시 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 /*이미지 스타일*/
 .piano-lines {
-    width: 250px; /*이미지 크기 조정*/
-    height: auto;
+    width: 404px;
+    height: 33px;
+    margin-top: 198px;
+    margin-left: -7px;
+    z-index: 1; /* 텍스트 아래에 표시 */
+    border: 0.6px;
+    position: relative; 
 }
 
-.logo {
+.start-logo {
+    margin-top: -45px;
+    margin-left: 267.72px;
+    width: 91.03px;
+    height: 64px;
+    z-index: 2; /*piano-lines 이미지 위에 위치*/
     position: absolute;
-    top: 15%; /*로고의 위치 조정*/
-    width: 80px;
-    height: auto;
 }
 
 /*푸터*/
@@ -58,25 +59,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    max-width: 300px;
-    background-color: #FFEB00;
-    color: #000;
+    margin-top: 471px;
+    margin-bottom: 30px;
+    background-color: none;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 15px;
-    margin-bottom: 10px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 /*이메일 버튼*/
 .email-button {
     background: none;
-    color: #555;
-    border: none;
+    color: #707070;
     font-size: 14px;
+    font-weight: 500;
+    line-height: 11.2px;
+    border: none;
     text-decoration: underline;
     cursor: pointer;
+    margin-bottom: 38px;
 }
