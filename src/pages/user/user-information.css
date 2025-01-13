@@ -87,29 +87,12 @@
     overflow-x : auto;
     margin-bottom: 20px;
     margin-left: 26px;
+    -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+    scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
 }
 
 .viewBtn::-webkit-scrollbar {
-    border-bottom: 1px solid #d0d0d0;
-    border-top: 1px solid #d0d0d0;
-    color: #d0d0d0;
-    height: 20px;
-    width: 310px;
-}
-
-.viewBtn::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    background-color: #e0e0e0;
-    border: 4px solid #0000;
-    border-radius: 50px;
-    height: 12px;
-    width: 100px;
-}
-
-.viewBtn::-webkit-scrollbar-track {
-    border-radius: 50px;
-    height: 30px;
-    width: 200px;
+    display: none; /* Chrome, Safari에서 스크롤바 숨기기 */
 }
 
 /* 지역 리스트 */
@@ -118,9 +101,8 @@
     flex-wrap: wrap;
     gap: 8px;
     width: 1250px;
-    height: 65px;
+    height: 38px;
     margin-top: 14px;
-    /* overflow-x: auto; 가로 스크롤 활성화 */
     white-space: nowrap; /*줄바꿈 방지*/
     -ms-overflow-style: none; /* IE, Edge 스크롤바 숨김 */
     scrollbar-width: none; /* Firefox 스크롤바 숨김 */
@@ -137,7 +119,6 @@
     font-weight: 500;
     line-height: 20px;
     cursor: pointer;
-    margin-top: 14px;
 }
 
 .region-button:hover {
@@ -146,13 +127,18 @@
 }
 
 
-/* 연주 가능 종목 섹션 */
+/*연주 가능 종목 섹션*/
 .instruments-section {
     width: 100%;
     max-width: 393px;
     height: 295px;
     margin-top: 46px;
     margin-bottom: 205px;
+}
+
+/*지역 리스트가 표시될 때 여백 조정*/
+.instruments-section.adjusted-margin {
+    margin-bottom: 148px;
 }
 
 .instruments-section label {
