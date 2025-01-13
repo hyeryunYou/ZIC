@@ -71,13 +71,16 @@ export default function UserInformation() {
                         <img src="/searchbutton.png"/>
                     </button>
                 </div>
-                <div className="region-list">
-                    {regionList.map((region, index) => (
-                        <button
-                            key={index} className="region-button"
-                        >{region.name}
-                        </button>
-                    ))}
+
+                <div className="viewBtn">
+                    <div className="region-list">
+                        {regionList.map((region, index) => (
+                            <button
+                                key={index} className="region-button"
+                            >{region.name}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
 
