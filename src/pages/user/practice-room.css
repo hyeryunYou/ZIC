@@ -2,6 +2,7 @@
   width: 393px;
   height: 260px;
   position: relative;
+  z-index: 10; /* 메인 이미지의 z-index 설정 */
 }
 .main-image {
   width: 393px;
@@ -13,7 +14,7 @@
   top: 49px;
   left: 16px;
   position: absolute;
-  z-index: 10;
+  z-index: 20;
   cursor: pointer;
 }
 
@@ -33,6 +34,9 @@
 .practice-room-container {
   display: flex;
   flex-direction: column;
+  position: relative; /* 위치를 상대적으로 변경 */
+  margin-top: -53px;
+  z-index: 20; /* .top-practice-room 위로 배치 */
 }
 
 /* 맨 위 정보 칸 */
@@ -44,6 +48,7 @@
   height: 126px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  background: #FFFFFF;
 }
 .title-and-like {
   display: flex;

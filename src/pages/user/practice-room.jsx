@@ -80,7 +80,7 @@ export default function UserPractice() {
           <span className="address-text">울산광역시 남구 대학로 123-1</span>
           <img src="address-arrow.png" className="address-arrow-icon"/>
         </button> 
-        </div> 
+      </div> 
 
       {/*hash 맵
       ture false*/}
