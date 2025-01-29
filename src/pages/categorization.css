@@ -8,7 +8,7 @@
 
 /* 진행 바 */
 .progress-bar-container {
-    width: 407px;
+    width: 404px;
     height: 2px;
     position: relative;
     border-radius: 1.5px;
@@ -31,7 +31,7 @@
     margin-top: 142px;
     margin-bottom: 46.26px;
     margin-left: 30px;
-    font-weight: 600;
+    font-family: 'Pretendard-Medium';
     font-size: 20px;
     line-height: 34.11px;
     color: #030303;
@@ -44,6 +44,7 @@
     justify-content: center;
     gap: 14px;
     margin-bottom: 311px;
+    margin-top: 46.26px;
 }
 
 /* 카테고리 버튼 기본 스타일 */
@@ -59,8 +60,8 @@
 }
 
 .category-button div {
-    margin-top: 42px;
-    margin-bottom: 41px;
+    margin-top: 43px;
+    margin-bottom: 40px;
     margin-left: 44px;
     margin-right: 44px;
     width: 72px;
@@ -70,23 +71,26 @@
 }
 
 .category-button span {
-    font-weight: 500;
+    font-family: 'Pretendard-Regular';
     font-size: 14px;
-    line-height: 23.88px;
+    color: #545454;
+    letter-spacing: 2%;
 }
 
 .category-button p {
     width: 72px;
     height: 33px;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 44.34px;
+    font-family: 'Pretendard-Bold';
+    font-size: 26px;
+    letter-spacing: 2%;
+    margin-top: 6px;
+    margin-bottom: 40px;
 }
 
 /* 활성화된 버튼 스타일 */
 .category-button.active {
-    background-color: #007bff; /* 파란색 */
-    color: #ffffff;
+    background-color: #0095FF; /* 파란색 */
+    color: #FFFFFF;
 }
 
 .category-button.active span {

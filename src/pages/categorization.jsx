@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/header"
 import NextButton from "../components/button"; // 공용 button 컴포넌트 가져오기기
 import "./categorization.css";
+import "../styles/fonts.css";
 
 export default function Categorization() {
     const [selected, setSelected] = useState("");
