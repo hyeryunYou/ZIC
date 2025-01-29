@@ -1,17 +1,19 @@
 import React, {useEffect} from 'react';
 import './start.css';
+import "../styles/fonts.css";
 
 export default function Start() {
     useEffect(() => {
-        // 카카오 SDK 스크립트 동적 로드
+        // Kakao SDK 스크립트 동적 로드
         const script = document.createElement('script');
         script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
         script.onload = () => {
-            // 스크립트 로드 완료 후 카카오 SDK 초기화
-            if (window.Kakao && !window.Kakao.isInitialized()) {
-                // 여기서 앱 키를 넣어 초기화
+            // Kakao SDK 초기화
+            if (!window.Kakao.isInitialized()) {
                 window.Kakao.init('f1c1be5764e3d1e9d99b64e47e00ac1b');
+                console.log('Kakao SDK 초기화 여부:', window.Kakao.isInitialized());
             }
+            handleRedirect(); // 페이지 로드 시 리다이렉트 처리
         };
         document.head.appendChild(script);
 
@@ -21,46 +23,28 @@ export default function Start() {
         };
     }, []);
 
+    // 로그인 함수
     const handleKakaoLogin = () => {
+        const redirectURL = `http://localhost:5173/categorization`; // 리다이렉트 후 돌아올 URL
         if (window.Kakao) {
-            //카카오 로그인 요청
-            window.Kakao.Auth.login({
-                scope: 'profile_nickname, profile_image',
-                success: function(authObj) {
-                    console.log(authObj);
-
-                    // 세션과 로컬 스토리지 클리어
-                    //sessionStorage.clear();
-                    //localStorage.clear();
-
-                    //사용자 정보 요청
-                    window.Kakao.API.request({
-                        url: '/v2/user/me',
-                        success: res => {
-                            const kakao_account = res.kakao_account;
-                            console.log(kakao_account);
-                            
-                            // 연결 끊기 요청
-                            window.Kakao.API.request({
-                                url: '/v1/user/unlink',
-                                success: function(response) {
-                                    console.log("연결 끊기 성공", response);
-                                    window.location.href = "http://localhost:5173/categorization"; //Redirect URL
-                                },
-                                fail: function(error) {
-                                    console.error("연결 끊기 실패", error);
-                                }
-                            });
-                        },
-                        fail: function(error) {
-                            console.error("사용자 정보 요청 실패", error);
-                        }
-                    });
-                },
-                fail: function(err) {
-                    console.error("로그인 실패", err);
-                }
+            window.Kakao.Auth.authorize({
+                redirectUri: redirectURL,
+                scope: 'profile_nickname,profile_image',
             });
+        }
+    };
+
+    // 로그인 후 리다이렉트된 URL에서 인증 코드 확인
+    const handleRedirect = () => {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code'); // URL에서 인증 코드 추출
+
+        if (code) {
+            console.log('인가 코드:', code);
+            alert(`인가 코드: ${code}`);
+        }
+        else {
+            console.error('인가 코드가 없습니다. URL을 확인하세요.');
         }
     };
 
