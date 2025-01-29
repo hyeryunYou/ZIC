@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/header"; // 공용 header 컴포넌트 가져오기
 import NextButton from "../../components/button"; // 공용 button 컴포넌트 가져오기
 import "./owner-information.css";
+import "../../styles/fonts.css";
 import "../../App.css"
 
 export default function OwnerInformation() {
@@ -35,7 +36,9 @@ export default function OwnerInformation() {
     return (
         <div className="content-wrap owner-information">
             <Header />
-            <div className="owner-progress-bar"/>
+            <div className="progress-bar-container">
+                <div className="owner-progress-bar"/>
+            </div>
             
             {/*상호명 입력*/}
             <div className="label-section">
@@ -74,7 +77,7 @@ export default function OwnerInformation() {
 
             {/*연주 가능 종목*/}
             <div className="owner-instruments-section">
-                <h2>연주 가능 종목</h2>
+                <label>연주 가능 종목</label>
                 <div className="instruments-grid">
                     {instruments.map((instrument, index) => (
                         <button
