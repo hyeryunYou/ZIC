@@ -1,7 +1,8 @@
 import '../successpage.css';
+import '../../styles/fonts.css'
 import NextButton from '../../components/button';
 
-export default function UserSuccess() {
+export default function OwnerSuccess() {
     return (
         <div className="success-container">
             <main className="success-center"> {/*가운데 콘텐츠 영역*/}

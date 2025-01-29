@@ -1,4 +1,5 @@
 import '../successpage.css';
+import '../../styles/fonts.css'
 import NextButton from '../../components/button';
 
 export default function UserSuccess() {
