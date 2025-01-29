@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/header"; // 공용 header 컴포넌트 가져오기
 import NextButton from "../../components/button"; // 공용 button 컴포넌트 가져오기
 import "./user-information.css";
+import "../../styles/fonts.css";
 
 export default function UserInformation() {
     const [selectedInstruments, setSelectedInstruments] = useState([]);
@@ -70,7 +71,9 @@ export default function UserInformation() {
     return (
         <div className="user-information-container">
             <Header />
-            <div className="user-progress-bar"/>
+            <div className="progress-bar-container">
+                <div className="user-progress-bar"/>
+            </div>
 
             {/*지역 입력*/}
             <div className="region-section">
