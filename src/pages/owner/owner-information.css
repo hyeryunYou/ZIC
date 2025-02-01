@@ -9,7 +9,16 @@
 }
 
 /* 진행 바 */
-.owner-progress-bar {
+.owner-progress-bar-container {
+    width: 404px;
+    height: 2px;
+    position: relative;
+    border-radius: 1.5px;
+    background-color:#DCDCDC;
+    margin-bottom: 54px !important;
+}
+
+.owner-progress-bar-fill {
     width: 100%;
     height: 5px;
     background-color: #278CFF;
@@ -43,6 +52,16 @@
     margin-left: 26px;
 }
 
+.label-section label.label-unfilled {
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    color: #030303; /* 기본 색상 */
+}
+
+.label-section label.label-filled {
+    color: #C6C6C6; /* 입력값이 있을 때 변경 */
+}
+
 /*사업자 번호 섹션*/
 .business-number-section {
     width: 100%;
@@ -59,6 +78,10 @@
     margin-left: 26px;
 }
 
+.business-number-section label.label-filled {
+    color: #C6C6C6;
+}
+
 /*주소 섹션*/
 .address-section {
     width: 100%;
@@ -73,6 +96,10 @@
     letter-spacing: 2%;
     color: #030303;
     margin-left: 26px;
+}
+
+.address-section label.label-filled {
+    color: #C6C6C6;
 }
 
 .input-bar {
@@ -96,9 +123,13 @@
     font-size: 16px;
     font-family: 'Pretendard-Regular';
     line-height: 20.8px;
-    letter-spacing: 2%;
     background-color: transparent; /*배경 투명*/
-    color: #C6C6C6; /*텍스트 색상*/
+    color: #030303; /*텍스트 색상*/
+}
+
+/* 입력 필드 placeholder 색상 조정 */
+.input-bar input::placeholder {
+    color: #C6C6C6;
 }
 
 .input-bar::after {
@@ -106,7 +137,7 @@
     position: absolute;
     margin-top: 32px;
     width: 342px; /* 전체 너비 */
-    height: 1.5px; /* 밑줄 두께 */
+    height: 1.6px; /* 밑줄 두께 */
     border-radius: 1.5px;
     background-color: #DCDCDC; /* 밑줄 색상 */
 }
@@ -133,7 +164,12 @@
     line-height: 20.8px;
     letter-spacing: 2%;
     background-color: transparent; /*배경 투명*/
-    color: #C6C6C6; /*텍스트 색상*/
+    color: #030303; /*텍스트 색상*/
+}
+
+/* 입력 필드 placeholder 색상 조정 */
+.second-input-bar input::placeholder {
+    color: #C6C6C6;
 }
 
 .second-input-bar::after {
@@ -178,6 +214,11 @@
     margin-left: 26px;
 }
 
+/* 선택된 악기가 있을 때 변경될 스타일 */
+.owner-instruments-section .label-filled {
+    color: #C6C6C6; /* 선택 시 색상 변경 */
+}
+
 .instruments-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
@@ -206,4 +247,11 @@
 .instrument-button.active {
     background-color: #278CFF; /*선택된 버튼 배경색*/
     color: #ffffff; /*선택된 버튼 글자색*/
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 11px;
+    margin-left: 26px;
 }
