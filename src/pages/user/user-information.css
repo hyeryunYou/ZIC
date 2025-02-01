@@ -54,6 +54,9 @@
     color: #030303;
     margin-left: 26px;
 }
+.region-section label.label-filled {
+    color: #C6C6C6;
+}
 
 .search-bar {
     display: flex;
@@ -149,6 +152,12 @@
     color: #FFFFFF;
 }
 
+.region-button.selected {
+    background-color: #278CFF; /* 선택된 버튼 색상 */
+    color: #FFFFFF;
+    border-color: #278CFF;
+}
+
 
 /*연주 가능 종목 섹션*/
 .instruments-section {
@@ -160,7 +169,7 @@
 }
 
 /*지역 리스트가 표시될 때 여백 조정*/
-.instruments-section.adjusted-margin {
+.instruments-section.region-list-visible {
     margin-bottom: 148px;
 }
 
@@ -170,6 +179,11 @@
     letter-spacing: 2%;
     color: #030303;
     margin-left: 26px;
+}
+
+/* 선택된 악기가 있을 때 변경될 스타일 */
+.instruments-section .label-filled {
+    color: #C6C6C6; /* 선택 시 색상 변경 */
 }
 
 .instruments-grid {

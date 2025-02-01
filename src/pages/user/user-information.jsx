@@ -7,6 +7,7 @@ import "../../styles/fonts.css";
 
 export default function UserInformation() {
     const [selectedInstruments, setSelectedInstruments] = useState([]);
+    const [selectedRegion, setSelectedRegion] = useState(null);
     const navigate = useNavigate();
     const [searchInput, setSearchInput] = useState("");
     const [regionList, setRegionList] = useState([
@@ -39,28 +40,42 @@ export default function UserInformation() {
 
     const toggleInstrument = (instrument) => {
         if (selectedInstruments.includes(instrument)) {
-            // 이미 선택된 악기를 클릭하면 선택 해제
             setSelectedInstruments(selectedInstruments.filter(item => item !== instrument));
         } else {
-            // 선택되지 않은 악기를 클릭하면 추가
             setSelectedInstruments([...selectedInstruments, instrument]);
         }
     };
 
+    const toggleRegion = (name) => {
+        if (selectedRegion === name) {
+            setSelectedRegion(null); // 이미 선택된 지역을 다시 클릭하면 해제
+        } else {
+            setSelectedRegion(name); // 새로운 지역을 선택
+        }
+    };
+    
+
     const handleSearch = () => {
-        const matchedRegion = regionList.find(region => region.name.includes(searchInput));
+        const searchQuery = searchInput.trim().toLowerCase();
+        let updatedList = [];
+
+        const matchedRegion = regionList.find(region =>
+            region.name.toLowerCase().includes(searchQuery)
+        );
+
         if (matchedRegion) {
-            const updatedList = [
+            updatedList = [
                 matchedRegion,
                 ...regionList
                     .filter(region => region.name !== matchedRegion.name)
                     .sort((a, b) => b.population - a.population),
             ];
-            setFilteredRegions(updatedList);
         } else {
-            setFilteredRegions([]); // 검색 결과가 없을 때 빈 리스트
+            updatedList = regionList; // 검색 결과가 없으면 전체 지역 리스트 표시
         }
-        setShowRegions(true); // 검색 버튼을 눌렀을 때만 표시
+
+        setFilteredRegions(updatedList);
+        setShowRegions(true); // 검색 버튼을 눌렀을 때 리스트 표시
     };
 
     const handleNext = () => {
@@ -77,7 +92,7 @@ export default function UserInformation() {
 
             {/*지역 입력*/}
             <div className="region-section">
-                <label>지역</label>
+                <label className={selectedRegion ? "label-filled" : "label-unfilled"}>지역</label>
                 <div className="search-bar">
                     <input
                         type="text"
@@ -93,8 +108,12 @@ export default function UserInformation() {
                 {showRegions && (
                     <div className="viewBtn">
                         <div className="region-list">
-                            {filteredRegions.map((region, index) => (
-                                <button key={index} className="region-button">
+                        {filteredRegions.map((region, index) => (
+                                <button
+                                    key={index}
+                                    className={`region-button ${selectedRegion === region.name ? "selected" : ""}`}
+                                    onClick={() => toggleRegion(region.name)}
+                                >
                                     {region.name}
                                 </button>
                             ))}
@@ -104,8 +123,8 @@ export default function UserInformation() {
             </div>
 
             {/*연주 가능 종목*/}
-            <div className={`instruments-section ${showRegions ? "adjusted-margin" : ""}`}>
-                <label>연주 가능 종목</label>
+            <div className={`instruments-section ${showRegions ? "region-list-visible" : ""}`}>
+                <label className={selectedInstruments.length > 0 ? "label-filled" : "label-unfilled"}>연주 가능 종목</label>
                 <div className="instruments-grid">
                     {instruments.map((instrument, index) => (
                         <button
