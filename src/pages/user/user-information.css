@@ -79,7 +79,11 @@
     font-size: 16px;
     font-family: 'Pretendard-Regular';
     letter-spacing: 2%;
-    color: #C6C6C6; /*텍스트 색상*/
+    color: #030303; /*텍스트 색상*/
+}
+
+.search-bar input::placeholder {
+    color: #C6C6C6;
 }
 
 .search-bar::after {
