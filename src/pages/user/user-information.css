@@ -8,7 +8,7 @@
 }
 
 /* 진행 바 */
-.progress-bar-container {
+.user-progress-bar-container {
     width: 404px;
     height: 2px;
     position: relative;
@@ -17,21 +17,26 @@
     margin-bottom: 61px !important;
 }
 
-.user-progress-bar {
-    width: 100%;
+.user-progress-bar-fill {
+    width: 202px;
     height: 5px;
-    border-radius: 1.5px;
+    position: absolute;
+    top: -1.4px;
+    left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     background-color: #278CFF;
-    animation: progress-animation 1s ease-in-out forwards; /* 애니메이션 추가 */
+    animation: user-progress-animation 1s ease-in-out forwards; /* 애니메이션 추가 */
 }
 
 /* 애니메이션 키프레임 */
-@keyframes progress-animation {
+@keyframes user-progress-animation {
     from {
         width: 202px; /* 시작 너비 */
     }
     to {
-        width: 404px; /* 끝 너비 */
+        width: 436px; /* 끝 너비 */
+        clip-path: inset(0px 27px 0px 0px); /* 오른쪽 27px만 가리기 */
     }
 }
 

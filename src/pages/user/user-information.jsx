@@ -71,8 +71,8 @@ export default function UserInformation() {
     return (
         <div className="user-information-container">
             <Header />
-            <div className="progress-bar-container">
-                <div className="user-progress-bar"/>
+            <div className="user-progress-bar-container">
+                <div className="user-progress-bar-fill"/>
             </div>
 
             {/*지역 입력*/}
