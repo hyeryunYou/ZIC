@@ -146,20 +146,26 @@
     border-radius: 20px;
     color: #7D7D7D;
     font-size: 14px;
-    font-weight: 500;
+    font-family: 'Pretendard-Regular';
     line-height: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 0.9px;
 }
 
 .region-button:hover {
     background-color: #278CFF;
+    border-color: #63ACFF;
     color: #FFFFFF;
 }
 
 .region-button.selected {
     background-color: #278CFF; /* 선택된 버튼 색상 */
     color: #FFFFFF;
-    border-color: #278CFF;
+    border-color: #63ACFF;
 }
 
 
@@ -187,7 +193,7 @@
 
 /* 선택된 악기가 있을 때 변경될 스타일 */
 .instruments-section .label-filled {
-    color: #C6C6C6; /* 선택 시 색상 변경 */
+    color: #C6C6C6;
 }
 
 .instruments-grid {
@@ -195,7 +201,7 @@
     grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
     width: 340px;
     height: 255px;
-    gap: 10px; /*버튼 사이 간격*/
+    gap: 10px;
     margin-top: 20px;
     margin-left: 26px;
 }
@@ -214,6 +220,6 @@
 }
 
 .instrument-button.active {
-    background-color: #278CFF; /*선택된 버튼 배경색*/
-    color: #ffffff; /*선택된 버튼 글자색*/
+    background-color: #278CFF;
+    color: #ffffff;
 }
