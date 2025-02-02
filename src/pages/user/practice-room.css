@@ -156,7 +156,7 @@
   width: 1500px;
   -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
   scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .time-graph::-webkit-scrollbar {
@@ -179,29 +179,39 @@
   font-family: 'Pretendard-Regular';
 }
 
+.container{
+  position : relative;
+}
+
 .time-slot {
   width: 24px;
   height: 16.96px;
   background-color: #F2F2F2;
+  
 }
 .time-slot.available {
   background-color: #80CDFF;
 }
 .time-graph-divider-white {
+  position: absolute;
   width: 1px;
   height : 21.35px;
-  border-left: 2px dashed #2196f3; /* 세로 점선 */
+  border-left: 2px dashed #ffffff; /* 세로 점선 */
+  background-color: transparent;
 }
 .time-graph-divider-black {
   width: 1px;
-  height : 24px;
+  height : 21.35px;
+  border-left: 2px dashed #A9A9A9; /* 세로 점선 */
+  background-color: transparent;
 }
 
 .graph-container{
   display: flex;
   flex-direction: row;
   width: 1500px;
-  height: 50px;
+  height: 25px;
+  align-items: center;
 }
 
 .room-name-and-price {
