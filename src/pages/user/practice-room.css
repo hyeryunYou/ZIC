@@ -141,26 +141,61 @@
   margin-bottom: 20px;
   border-radius: 10px;
 }
+.time-graph-container{
+  width : 385px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-left: 17px;
+  margin-top: 10px;
+  height : 42px;
+}
+
 .time-graph {
   display: flex;
-  overflow-x: scroll;
-  width: 100%;
-  margin-top: 10px;
+  white-space: nowrap;
+  width: 1500px;
   -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
   scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
 }
+
 .time-graph::-webkit-scrollbar {
   display: none; /* Chrome, Safari에서 스크롤바 숨기기 */
 }
+
+.time-container {
+  width: 1500px;
+  height: 14px;
+  display: flex;
+  flex-direction: row;
+}
+
+.time-item {
+  width : 21px;
+  height : 14px;
+  margin-right: 30px;
+  font-size: 10.77px;
+  line-height: 14.01px;
+  font-family: 'Pretendard-Regular';
+}
+
 .time-slot {
-  width: 10px;
+  width: 24px;
   height: 16.96px;
-  margin-right: 1px;
   background-color: #F2F2F2;
 }
 .time-slot.available {
   background-color: #80CDFF;
 }
+.time-graph-divider-white {
+  width: 1px;
+  height : 21.35px;
+  border-left: 2px dashed #2196f3; /* 세로 점선 */
+}
+.time-graph-divider-black {
+  width: 1px;
+  height : 24px;
+}
+
 .room-name-and-price {
   display: flex;
   justify-content: space-between; /* 제목과 좋아요 버튼 사이 간격 조정 */
