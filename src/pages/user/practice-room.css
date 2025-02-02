@@ -156,6 +156,7 @@
   width: 1500px;
   -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
   scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+  flex-direction: row;
 }
 
 .time-graph::-webkit-scrollbar {
@@ -194,6 +195,13 @@
 .time-graph-divider-black {
   width: 1px;
   height : 24px;
+}
+
+.graph-container{
+  display: flex;
+  flex-direction: row;
+  width: 1500px;
+  height: 50px;
 }
 
 .room-name-and-price {

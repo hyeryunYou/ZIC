@@ -103,37 +103,38 @@ export default function UserPractice() {
                   </div>
                 ))}
               </div>
-            </div>
 
-              <div style={{ borderTopLeftRadius: "23.09px", borderBottomLeftRadius: "23.09px" }}
-              className={`time-slot ${room.availableTimes[1] ? 'unavailable' : 'available'}`}>
+              <div className="graph-container">
+                
+                <div style={{ borderTopLeftRadius: "23.09px", borderBottomLeftRadius: "23.09px" }}
+                className={`time-slot ${room.availableTimes[1] ? 'unavailable' : 'available'}`}>
+                <div className="time-graph-divider-white"/>
+                  {Array.from({length: 48}).slice(1,47).map((_, index) => (
+                    index % 2 === 0 ? 
+                    ( //짝수 일때 실행이 됨 검정색 선
+                    <div
+                      key={index}
+                      className={`time-slot ${
+                        room.availableTimes[index] ? 'unavailable' : 'available'
+                      }`}>
+                    </div>
+                    ) : ( //홀수 일때 실행이 됨 검정색 선
+                    <div
+                      key={index}
+                      className={`time-slot ${
+                        room.availableTimes[index] ? 'unavailable' : 'available'
+                      }`}>
+                    </div>
+                    )
+                  ))}
+                <div  style={{borderTopRightRadius: "23.09px", borderBottomRightRadius: "23.09px" }} 
+                  className={`time-slot ${room.availableTimes[48] ? 'unavailable' : 'available'}`}>
+                </div>
 
-              <div className="time-graph-divider-white"/>
-
-                {Array.from({length: 48}).slice(1,47).map((_, index) => (
-                  index % 2 === 0 ? 
-                  ( //짝수 일때 실행이 됨 검정색 선
-                  <div
-                    key={index}
-                    className={`time-slot ${
-                      room.availableTimes[index] ? 'unavailable' : 'available'
-                    }`}>
-                  </div>
-                  ) : ( //홀수 일때 실행이 됨 검정색 선
-                  <div
-                    key={index}
-                    className={`time-slot ${
-                      room.availableTimes[index] ? 'unavailable' : 'available'
-                    }`}>
-                  </div>
-                  )
-
-                ))}
-              <div  style={{borderTopRightRadius: "23.09px", borderBottomRightRadius: "23.09px" }} 
-                className={`time-slot ${room.availableTimes[48] ? 'unavailable' : 'available'}`}>
               </div>
             </div>
           </div>
+        </div>
 
           <div className='room-name-and-price'>
             <h3>{room.name}</h3>
