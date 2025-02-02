@@ -8,23 +8,24 @@ const practiceRooms = [
     name: 'A실',
     price: '10,000',
     image: '/practice-room 2.png',
-    availableTimes: Object.fromEntries(Array.from({ length: 48 }, (_, i) => [i, true])),
+    availableTimes: Object.fromEntries(Array.from({ length: 48 }, (_, i) => [i, i % 2 ===0])),
   }, // true는 이용 불가, false는 이용 가능
   {
     id: 2,
     name: 'B실',
     price: '10,000',
     image: '/practice-room 3.png',
-    availableTimes: Object.fromEntries(Array.from({ length: 48 }, (_, i) => [i, true])),
+    availableTimes: Object.fromEntries(Array.from({ length: 48 }, (_, i) => [i, i % 2 ===0])),
   },
   {
     id: 3,
     name: 'C실',
     price: '10,000',
     image: '/practice-room 4.png',
-    availableTimes: Object.fromEntries(Array.from({ length: 48 }, (_, i) => [i, true])),
+    availableTimes: Object.fromEntries(Array.from({ length: 48 }, (_, i) => [i, i % 2 ===0])),
   },
 ];
+
 
 export default function UserPractice() {
   const [likes, setLikes] = useState(0); // 좋아요 수 상태
@@ -93,15 +94,45 @@ export default function UserPractice() {
         <div key={room.id} className="practice-room">
           <img src={room.image} alt={room.name} className="practice-room-image" />
 
-          <div className="time-graph">
-            {Array.from({length: 48}).map((_, index) => (
-              <div
-                key={index}
-                className={`time-slot ${
-                  room.availableTimes[index] ? 'unavailable' : 'available'
-                }`}>
+          <div className="time-graph-container">
+            <div className="time-graph">
+              <div className="time-container">
+                {Array.from({ length: 24 }).map((_, index) => (
+                  <div key={index} className="time-item">
+                    {index}시
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+              <div style={{ borderTopLeftRadius: "23.09px", borderBottomLeftRadius: "23.09px" }}
+              className={`time-slot ${room.availableTimes[1] ? 'unavailable' : 'available'}`}>
+
+              <div className="time-graph-divider-white"/>
+
+                {Array.from({length: 48}).slice(1,47).map((_, index) => (
+                  index % 2 === 0 ? 
+                  ( //짝수 일때 실행이 됨 검정색 선
+                  <div
+                    key={index}
+                    className={`time-slot ${
+                      room.availableTimes[index] ? 'unavailable' : 'available'
+                    }`}>
+                  </div>
+                  ) : ( //홀수 일때 실행이 됨 검정색 선
+                  <div
+                    key={index}
+                    className={`time-slot ${
+                      room.availableTimes[index] ? 'unavailable' : 'available'
+                    }`}>
+                  </div>
+                  )
+
+                ))}
+              <div  style={{borderTopRightRadius: "23.09px", borderBottomRightRadius: "23.09px" }} 
+                className={`time-slot ${room.availableTimes[48] ? 'unavailable' : 'available'}`}>
+              </div>
+            </div>
           </div>
 
           <div className='room-name-and-price'>
