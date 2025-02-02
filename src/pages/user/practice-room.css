@@ -180,7 +180,12 @@
 }
 
 .container{
-  position : relative;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
 }
 
 .time-slot {
@@ -195,15 +200,17 @@
 .time-graph-divider-white {
   position: absolute;
   width: 1px;
-  height : 21.35px;
-  border-left: 2px dashed #ffffff; /* 세로 점선 */
+  height : 16.96px;
+  border-left: 1px dashed #ffffff; /* 세로 점선 */
   background-color: transparent;
+  left: 0;
 }
 .time-graph-divider-black {
+  position: absolute;
   width: 1px;
-  height : 21.35px;
-  border-left: 2px dashed #A9A9A9; /* 세로 점선 */
-  background-color: transparent;
+  height : 24px;
+  background-color: #A9A9A9;
+  left: 0;
 }
 
 .graph-container{

@@ -108,7 +108,7 @@ export default function UserPractice() {
                 <div className="container">
                   <div style={{ borderTopLeftRadius: "23.09px", borderBottomLeftRadius: "23.09px" }}
                   className={`time-slot ${room.availableTimes[1] ? 'unavailable' : 'available'}`}/>
-                  <div className="time-graph-divider-white"/>
+                  {/* <div className="time-graph-divider-white"/> */}
                 </div>
                   {Array.from({length: 48}).slice(1,47).map((_, index) => (
                     index % 2 === 0 ? 
