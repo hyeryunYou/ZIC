@@ -1,4 +1,5 @@
 ## 🔓closed #issue (#뒤에 issue 제거 후 이슈 번호 붙여주세요)
+<!-- ex) issue 번호가 2번이면 -> closed #2 -->
 
 ## #️⃣연관된 이슈
 
