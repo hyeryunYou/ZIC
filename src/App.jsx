@@ -15,7 +15,7 @@ function App() {
                 <BrowserRouter>
                     <div className="content-wrap">
                         <Routes>
-                            <Route path="/start" element={<Start />} />
+                            <Route path="/" element={<Start />} />
                             <Route path="/categorization" element={<Categorization />} />
                             <Route path="/user-information" element={<UserInformation />} />
                             <Route path="/user-success" element={<UserSuccess />} />
