@@ -136,7 +136,7 @@ export default function OwnerInformation() {
                     ))}
                 </div>
             </div>
-            <NextButton text="다음" onClick={handleNext}/> {/*다음 버튼 공용 컴포넌트 사용*/}
+            <NextButton text="완료" onClick={handleNext}/> {/*다음 버튼 공용 컴포넌트 사용*/}
         </div>
     );
 }
